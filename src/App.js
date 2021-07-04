@@ -16,7 +16,6 @@ function App() {
   );
   useEffect(() => {
     const fetchData = async () => {
-      console.log(apiPageNumber);
       const episodeResponse = await fetch(
         `https://rickandmortyapi.com/api/episode?page=${apiPageNumber}`
       );

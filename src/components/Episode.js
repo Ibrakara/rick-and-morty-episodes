@@ -13,7 +13,7 @@ function Episode({ match }) {
     return (
       <Link key={char.id} to={`/characters/${char.id}`}>
         <p>{char.name}</p>
-        <img src={`${char.image}`} alt="character" />
+        <img src={`${char.image}`} alt="character-tumbnail" />
       </Link>
     );
   });
