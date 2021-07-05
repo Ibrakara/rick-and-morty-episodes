@@ -8,7 +8,16 @@ function App() {
   const [episodes, setEpisodes] = useState([]);
   const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
-  const [episodesPerPage, setEpisodesPerPage] = useState(5);
+  const episodesPerPage = 5;
+  const currentPageLastIndex = currentPage * episodesPerPage;
+  const currentPageFirstIndex = currentPageLastIndex - episodesPerPage;
+  const currentEpisodes = episodes.slice(
+    currentPageFirstIndex,
+    currentPageLastIndex
+  );
+  const changePage = (pageNum) => {
+    setCurrentPage(pageNum);
+  };
 
   const apiMaxNumberOfEpisodesPerPage = 20;
   const apiPageNumber = Math.ceil(
@@ -16,11 +25,26 @@ function App() {
   );
   useEffect(() => {
     const fetchData = async () => {
-      const episodeResponse = await fetch(
-        `https://rickandmortyapi.com/api/episode?page=${apiPageNumber}`
+      const fetchSingleEpisodePage = async (apiEpisodesPageNum) => {
+        const episodeResponse = await fetch(
+          `https://rickandmortyapi.com/api/episode?page=${apiEpisodesPageNum}`
+        );
+        const episodesData = await episodeResponse.json();
+        return episodesData;
+      };
+      const promisesArr = [];
+      for (let i = 1; i <= 3; i++) {
+        promisesArr.push(fetchSingleEpisodePage(i));
+      }
+      const dataArr = [];
+      console.log(promisesArr);
+      await Promise.all(promisesArr).then((results) =>
+        results.forEach((elem) =>
+          elem.results.forEach((subElem) => dataArr.push(subElem))
+        )
       );
-      const episodesData = await episodeResponse.json();
-      setEpisodes(episodesData.results);
+      console.log(dataArr);
+      setEpisodes(dataArr);
       setLoading(false);
     };
     fetchData();
@@ -31,7 +55,14 @@ function App() {
       <h1>Rick and Morty Episode Guide</h1>
       <Switch>
         <Route exact path="/">
-          <Episodes episodes={episodes} loading={loading} />
+          <Episodes
+            currentPageEpisodes={currentEpisodes}
+            loading={loading}
+            episodesPerPage={episodesPerPage}
+            changePage={changePage}
+            totalNumOfEpisodes={episodes.length}
+            setCurrentPage={setCurrentPage}
+          />
         </Route>
         <Route path="/episodes/:id" component={Episode} />
         <Route path="/characters/:id" component={Character} />

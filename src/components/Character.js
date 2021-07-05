@@ -37,7 +37,7 @@ function Character({ match }) {
             The character has shown in {characterInfo.episode.length} episodes
             in the series.
             {characterInfo.episode.length > 35
-              ? "Character is one of two main characters."
+              ? "Character is one of two main characters of the show."
               : ""}
           </p>
           <img src={`${characterInfo.image}`} alt="character" />

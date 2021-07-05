@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Character from "./Character";
 import { Link } from "react-router-dom";
 
 function Episode({ match }) {
@@ -47,7 +46,6 @@ function Episode({ match }) {
         results.forEach((elem) => result.push(elem))
       );
 
-      console.log(result);
       setEpisodeCharacters(result);
     };
   }, []);
