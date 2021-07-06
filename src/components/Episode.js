@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import "./styles/Episode.css";
 
 function Episode({ match }) {
   const [episode, setEpisode] = useState({});
@@ -10,9 +11,17 @@ function Episode({ match }) {
   const episodeNum = episode.episode;
   const episodeCharList = episodeCharacters.map((char) => {
     return (
-      <Link key={char.id} to={`/characters/${char.id}`}>
-        <p>{char.name}</p>
-        <img src={`${char.image}`} alt="character-tumbnail" />
+      <Link
+        className="character-link"
+        key={char.id}
+        to={`/characters/${char.id}`}
+      >
+        <p className="episode-character-name">{char.name}</p>
+        <img
+          className="episode-character-img"
+          src={`${char.image}`}
+          alt="character-tumbnail"
+        />
       </Link>
     );
   });
@@ -50,18 +59,20 @@ function Episode({ match }) {
     };
   }, []);
 
-  return (
-    <div>
-      {isEpisodeLoading ? (
-        <p>Loading...</p>
-      ) : (
-        <div>
-          <h2>{episodeName}</h2>
-          <h3>{episodeDate}</h3>
-          <h4>{episodeNum}</h4>
-          {episodeCharList}
-        </div>
-      )}
+  return isEpisodeLoading ? (
+    <p>Loading...</p>
+  ) : (
+    <div className="episode-detail-container">
+      <h2 id="episode-name" className="episode-element">
+        {episodeName}
+      </h2>
+      <h3 id="episode-date" className="episode-element">
+        {episodeDate}
+      </h3>
+      <h4 id="episode-number" className="episode-element">
+        {episodeNum}
+      </h4>
+      <ul className="characters-container">{episodeCharList}</ul>
     </div>
   );
 }

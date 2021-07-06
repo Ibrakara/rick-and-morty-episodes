@@ -1,4 +1,5 @@
 import React from "react";
+import "./styles/Pagination.css";
 
 function Pagination({
   totalNumOfEpisodes,
@@ -13,23 +14,33 @@ function Pagination({
     });
   };
   const nextPage = () => {
+    const totalPageNumber = Math.ceil(totalNumOfEpisodes / episodesPerPage);
     setCurrentPage((prevVal) => {
-      return prevVal < 9 ? prevVal + 1 : prevVal;
+      return prevVal < totalPageNumber ? prevVal + 1 : prevVal;
     });
   };
   for (let i = 1; i <= Math.ceil(totalNumOfEpisodes / episodesPerPage); i++) {
     pageNumbers.push(i);
   }
+  const pageNumberList = pageNumbers.map((number) => (
+    <button
+      className="page-number"
+      key={number}
+      onClick={() => changePage(number)}
+    >
+      {number}
+    </button>
+  ));
 
   return (
-    <div>
-      <button onClick={prevPage}>Prev</button>
-      {pageNumbers.map((number) => (
-        <button key={number} onClick={() => changePage(number)}>
-          {number}
-        </button>
-      ))}
-      <button onClick={nextPage}>Next</button>
+    <div className="pagination-container">
+      <button className="navigation-button page-number" onClick={prevPage}>
+        Prev
+      </button>
+      {pageNumberList}
+      <button className="navigation-button page-number" onClick={nextPage}>
+        Next
+      </button>
     </div>
   );
 }

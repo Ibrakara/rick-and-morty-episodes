@@ -8,7 +8,7 @@ function App() {
   const [episodes, setEpisodes] = useState([]);
   const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
-  const episodesPerPage = 5;
+  const episodesPerPage = 9;
   const currentPageLastIndex = currentPage * episodesPerPage;
   const currentPageFirstIndex = currentPageLastIndex - episodesPerPage;
   const currentEpisodes = episodes.slice(
@@ -37,13 +37,11 @@ function App() {
         promisesArr.push(fetchSingleEpisodePage(i));
       }
       const dataArr = [];
-      console.log(promisesArr);
       await Promise.all(promisesArr).then((results) =>
         results.forEach((elem) =>
           elem.results.forEach((subElem) => dataArr.push(subElem))
         )
       );
-      console.log(dataArr);
       setEpisodes(dataArr);
       setLoading(false);
     };
@@ -52,7 +50,6 @@ function App() {
 
   return (
     <Router>
-      <h1>Rick and Morty Episode Guide</h1>
       <Switch>
         <Route exact path="/">
           <Episodes

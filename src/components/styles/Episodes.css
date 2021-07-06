@@ -1,0 +1,171 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.episodes-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 100vh;
+}
+#title {
+  font-size: 5vmax;
+  margin-bottom: 1vmax;
+  text-shadow: 5px 5px rgba(207, 219, 75, 255);
+  color: rgba(17, 173, 200, 255);
+}
+.episodes-list {
+  background: #ffa62e;
+  padding: 2vh 2vw;
+  height: 60vh;
+  width: 60vw;
+  margin-bottom: 1vmin;
+  display: grid;
+  grid-template-columns: 18vw 18vw 18vw;
+  grid-template-rows: 18vh 18vh 18vh;
+  place-content: center;
+  grid-gap: 1vmin;
+  border-radius: 3px;
+  box-shadow: 2px 2px 10px #33664f;
+}
+.episode-list-item {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  background: #feed56;
+  text-decoration: none;
+  border-radius: 3px;
+  padding: 1vmin 1vmin;
+  color: black;
+  font-size: 2.6vmin;
+  box-shadow: 1px 1px 3px rgb(87, 1, 87);
+  text-shadow: 1px 1px 2px black;
+  letter-spacing: 0.02vmin;
+}
+.episode-list-item:focus {
+  box-shadow: none;
+}

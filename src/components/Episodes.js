@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Pagination from "./Pagination";
+import "../components/styles/Episodes.css";
 
 const Episodes = (props) => {
   const loading = props.loading;
@@ -11,8 +12,12 @@ const Episodes = (props) => {
   const setCurrentPage = props.setCurrentPage;
   const episodeList = episodes.map((episode) => {
     return (
-      <Link key={episode.id} to={`/episodes/${episode.id}`}>
-        <li>{episode.name}</li>
+      <Link
+        className="episode-list-item"
+        key={episode.id}
+        to={`/episodes/${episode.id}`}
+      >
+        {episode.name}
       </Link>
     );
   });
@@ -20,8 +25,9 @@ const Episodes = (props) => {
     return <h2>Loading...</h2>;
   }
   return (
-    <div>
-      <ul>{episodeList}</ul>
+    <div className="episodes-container">
+      <h1 id="title">Rick and Morty Episode Guide</h1>
+      <ul className="episodes-list">{episodeList}</ul>
       <Pagination
         totalNumOfEpisodes={totalNumOfEpisodes}
         changePage={changePage}
