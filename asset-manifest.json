@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/Ibrakara/static/css/main.90966928.chunk.css",
-    "main.js": "/Ibrakara/static/js/main.7f51c9c0.chunk.js",
-    "main.js.map": "/Ibrakara/static/js/main.7f51c9c0.chunk.js.map",
-    "runtime-main.js": "/Ibrakara/static/js/runtime-main.5f094c76.js",
-    "runtime-main.js.map": "/Ibrakara/static/js/runtime-main.5f094c76.js.map",
-    "static/js/2.7d39f1f3.chunk.js": "/Ibrakara/static/js/2.7d39f1f3.chunk.js",
-    "static/js/2.7d39f1f3.chunk.js.map": "/Ibrakara/static/js/2.7d39f1f3.chunk.js.map",
-    "index.html": "/Ibrakara/index.html",
-    "static/css/main.90966928.chunk.css.map": "/Ibrakara/static/css/main.90966928.chunk.css.map",
-    "static/js/2.7d39f1f3.chunk.js.LICENSE.txt": "/Ibrakara/static/js/2.7d39f1f3.chunk.js.LICENSE.txt"
+    "main.css": "/rick-and-morty-episodes/static/css/main.90966928.chunk.css",
+    "main.js": "/rick-and-morty-episodes/static/js/main.7f51c9c0.chunk.js",
+    "main.js.map": "/rick-and-morty-episodes/static/js/main.7f51c9c0.chunk.js.map",
+    "runtime-main.js": "/rick-and-morty-episodes/static/js/runtime-main.711203c7.js",
+    "runtime-main.js.map": "/rick-and-morty-episodes/static/js/runtime-main.711203c7.js.map",
+    "static/js/2.7d39f1f3.chunk.js": "/rick-and-morty-episodes/static/js/2.7d39f1f3.chunk.js",
+    "static/js/2.7d39f1f3.chunk.js.map": "/rick-and-morty-episodes/static/js/2.7d39f1f3.chunk.js.map",
+    "index.html": "/rick-and-morty-episodes/index.html",
+    "static/css/main.90966928.chunk.css.map": "/rick-and-morty-episodes/static/css/main.90966928.chunk.css.map",
+    "static/js/2.7d39f1f3.chunk.js.LICENSE.txt": "/rick-and-morty-episodes/static/js/2.7d39f1f3.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.5f094c76.js",
+    "static/js/runtime-main.711203c7.js",
     "static/js/2.7d39f1f3.chunk.js",
     "static/css/main.90966928.chunk.css",
     "static/js/main.7f51c9c0.chunk.js"
