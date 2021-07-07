@@ -6,23 +6,29 @@
   margin-bottom: 2vmin;
 }
 #episode-name {
-  font-size: 3vmax;
+  font-size: 4vmax;
   margin-bottom: 0.7vmax;
   text-shadow: 3px 3px 1px rgba(207, 219, 75, 255);
   color: rgba(17, 173, 200, 255);
 }
 #episode-date {
-  font-size: 2vmax;
+  font-size: 3vmax;
   margin-bottom: 0.5vmax;
   text-shadow: 2px 2px 1px rgba(207, 219, 75, 255);
   color: rgba(17, 173, 200, 255);
 }
 #episode-number {
-  font-size: 1.5vmax;
+  font-size: 2.5vmax;
   margin-bottom: 0.3vmax;
   text-shadow: 1.5px 1.5px rgba(207, 219, 75, 255);
   color: rgba(17, 173, 200, 255);
-  margin-bottom: 1vmin;
+  margin-bottom: 4vmin;
+}
+#character-container-title {
+  font-size: 3vmax;
+  margin: 1vmax 0;
+  text-shadow: 3px 3px 1px rgba(207, 219, 75, 255);
+  color: rgba(17, 173, 200, 255);
 }
 .characters-container {
   background: #ffa62e;
@@ -52,4 +58,5 @@
   width: 13vmin;
   height: auto;
   border-radius: 2px;
+  box-shadow: 1px 1px 2px;
 }

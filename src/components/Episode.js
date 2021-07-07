@@ -72,6 +72,7 @@ function Episode({ match }) {
       <h4 id="episode-number" className="episode-element">
         {episodeNum}
       </h4>
+      <h2 id="character-container-title">Characters</h2>
       <ul className="characters-container">{episodeCharList}</ul>
     </div>
   );
