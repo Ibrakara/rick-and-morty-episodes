@@ -51,7 +51,7 @@ function App() {
   return (
     <Router>
       <Switch>
-        <Route exact path="/">
+        <Route exact path="/rick-and-morty-episodes">
           <Episodes
             currentPageEpisodes={currentEpisodes}
             loading={loading}
